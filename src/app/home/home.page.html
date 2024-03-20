@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class= "top">
+      My Home Page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <strong>Select your choices<br></strong>
+    <ion-button href="my-custom-page/1">Go By Link</ion-button>
+    <ion-button (click)="goToMyCustomPage()">Go By Event</ion-button>
+  </div>
+</ion-content>
