@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>DASHBOARD</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">dashboard</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-fab vertical = "bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name = "add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side = "top">
+      <ion-fab-button>
+        <ion-icon name ="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name ="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name ="logo-instagram"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <div class="container">
+    Data of USA
+    <div class="content" *ngFor="let population of populations; let i = index;">
+      <div *ngIf="i < 10">
+        State: {{population.State}} Population: {{population.Population}}
+      </div>
+    </div>
+
+    <ion-list>
+      <ion-item>
+        This is Item 1
+      </ion-item>
+      <ion-item>
+        This is Item 2
+      </ion-item>
+      <ion-item>
+        This is Item 3
+      </ion-item>
+    </ion-list>
+    
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Card Title
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        This is a basic card example.
+      </ion-card-content>
+    </ion-card>
+
+
+  <h2>Modal</h2>
+  <ion-button color = "primary" (click) = "toggleModal()">Modal</ion-button>
+  <h2>Alert</h2>
+  <ion-button color = "secondary" (click) = "alert()">Alert</ion-button>
+  <h2>Toast</h2>
+  <ion-button color = "tertiary" (click) = "presentToast()">Toast</ion-button>
+  
+  </div>
+</ion-content>
