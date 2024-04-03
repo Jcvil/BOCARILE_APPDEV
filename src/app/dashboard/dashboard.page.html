@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>DASHBOARD</ion-title>
+    <ion-title>Welcome {{userName}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">dashboard</ion-title>
+      <ion-title size="large">Welcome {{userName}}</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -68,4 +68,6 @@
   <ion-button color = "success" (click) = "presentToast()">Toast</ion-button>
   
   </div>
+
+  <ion-button color = "primary" (click) = "logOut()">Logout</ion-button>
 </ion-content>

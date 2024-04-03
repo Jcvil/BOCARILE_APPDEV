@@ -26,6 +26,7 @@ export class LoginPage implements OnInit {
       })
       await alert.present();
       this.authenticate.canProceed = true;
+      localStorage.setItem('userName', this.userName);
       this.router.navigate(['tabs/dashboard']);
     } else {
       const toast = await this.toastController.create({

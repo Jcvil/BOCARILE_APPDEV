@@ -5,6 +5,8 @@ import { ModalController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { ModalComponent } from '../modal/modal.component';
+import { AuthenticationService } from '../authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +15,8 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class DashboardPage implements OnInit {
   populations: Poulation[] = [];
-  constructor(private data: DataService,  private modalController: ModalController, private alertController: AlertController, private toastController: ToastController) { }
+  userName: any;
+  constructor(private data: DataService,  private modalController: ModalController, private alertController: AlertController, private toastController: ToastController, private authentication: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
     this.loadData()
@@ -55,4 +58,11 @@ export class DashboardPage implements OnInit {
       toast.dismiss();
     }
   }
-}
+
+    logOut () {
+      this.authentication.canProceed = true;
+      this.router.navigate(['login'])
+      localStorage.removeItem('userName');
+    }
+  }
+
