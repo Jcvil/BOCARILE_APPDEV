@@ -30,8 +30,8 @@ const routes: Routes = [
         loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
       },
       {
-        path: 'components',
-        loadChildren: () => import('./components/components.module').then( m => m.ComponentsPageModule)
+        path: 'calculator',
+        loadChildren: () => import('./calculator/components.module').then( m => m.ComponentsPageModule)
       },
     ]
   }
